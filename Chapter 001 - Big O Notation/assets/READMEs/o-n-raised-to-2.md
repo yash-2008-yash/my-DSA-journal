@@ -1,21 +1,20 @@
 # O(n²) - Quadratic Time
 
+**_Quadratic time complexity means that the running time of an algorithm is proportional to the square of the input size._**
+
 This kind of operation have nested loops for the same input.
 
-```cpp
-vector<vector<int>> add_matrices(vector<vector<int>>& matrix_A, vector<vector<int>>& matrix_B) {
-  int n = matrix_A.size();
-  int m = matrix_A[0].size();
-  vector<vector<int>> result(n, vector<int>(m));
+```python
+def add_matrices(matrix_A, matrix_B):
+    n = len(matrix_A)
+    m = len(matrix_A[0])
+    result = [[0] * m for _ in range(n)]
 
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      result[i][j] = matrix_A[i][j] + matrix_B[i][j];
-    }
-  }
+    for i in range(n):
+        for j in range(m):
+            result[i][j] = matrix_A[i][j] + matrix_B[i][j]
 
-  return result;
-}
+    return result
 ```
 
 The outer loop runs `n` times, and for each of those, inner loop also `n` times. So, total operations is `n × n = n²` times.

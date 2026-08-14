@@ -1,24 +1,19 @@
 # O(n!) - Factorial Time
 
-This is even worse. This happens when we are generating all permutations of something.
+**_Factorial time complexity means that the running time of an algorithm grows factorially with the size of the input._**
 
-```cpp
-void permute(vector<int>& arr, int l, int r) {
-  if (l == r) {
-    for (int x : arr) {
-      std::cout << x << " ";
-    }
+This is even worse. This is often seen in algorithms that generate all permutations of a set of data.
 
-    std::cout << endl;
-    return;
-  }
+```python
+def permute(arr, l, r):
+    if l == r:
+        print(" ".join(map(str, arr)))
+        return
 
-  for (int i = l; i <= r; i++) {
-    swap(arr[l], arr[i]);
-    permute(arr, l + 1, r);
-    swap(arr[l], arr[i]);
-  }
-}
+    for i in range(l, r + 1):
+        arr[l], arr[i] = arr[i], arr[l]
+        permute(arr, l + 1, r)
+        arr[l], arr[i] = arr[i], arr[l]
 ```
 
 For `n` elements, there are total `n!` orderings, and this generates every single one. If `n=10`, that's 36,28,800 permutations. If `n=15`, that's over a trillion permutations!

@@ -6,30 +6,40 @@ In this, if `n` loops are there, each loop does a `log n` operation.
 
 The Classic example: **Merge Sort**
 
-```cpp
-void merge(vector<int>& array, int left, int mid, int right) {
-  vector<int> temp;
-  int i = left, j = mid + 1;
+```python
+def merge(array, left, mid, right):
+    temp = []
+    i, j = left, mid + 1
 
-  while (i <= mid && j <= right) {
-    if (array[i] <= array[j]) { temp.push_back(array[i++]); }
-    else { temp.push_back(array[j++]); }
-  }
+    while i <= mid and j <= right:
+        if array[i] <= array[j]:
+            temp.append(array[i])
+            i += 1
+        else:
+            temp.append(array[j])
+            j += 1
 
-  while (i <= mid) { temp.push_back(array[i++]); }
-  while (j <= right) { temp.push_back(array[j++]); }
-  for (int k = left; k <= right; k++) { array[k] = temp[k - left]; }
-}
+    while i <= mid:
+        temp.append(array[i])
+        i += 1
 
-void merge_sort(vector<int>& array, int left, int right) {
-  if (left >= right) { return; }
+    while j <= right:
+        temp.append(array[j])
+        j += 1
 
-  int mid = (left + right) / 2;
+    for k in range(left, right + 1):
+        array[k] = temp[k - left]
 
-  merge_sort(array, left, mid);
-  merge_sort(array, mid + 1, right);
-  merge(array, left, mid, right);
-}
+
+def merge_sort(array, left, right):
+    if left >= right:
+        return
+
+    mid = (left + right) // 2
+
+    merge_sort(array, left, mid)
+    merge_sort(array, mid + 1, right)
+    merge(array, left, mid, right)
 ```
 
 Why it's O(n log n):
