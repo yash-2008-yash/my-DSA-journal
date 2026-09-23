@@ -30,6 +30,10 @@ Recursion has 5 parts. Let me break them down easily:
 
 Here are some exercises that made **recursion** click for me:
 - [Print name N times using recursion](./READMEs/name-n-times.md)
-- [Print 1 to N using Recursion](./READMEs/1-to-n.md)
-- [Print N to 1 using Recursion](./READMEs/n-to-1.md)
-- [Sum of First N Numbers](./READMEs/sum-of-n-numbers.md)
+- [Print 1 to N using recursion](./READMEs/1-to-n.md)
+- [Print N to 1 using recursion](./READMEs/n-to-1.md)
+- [Sum of First N Numbers using recursion](./READMEs/sum-of-n-numbers.md)
+- [Factorial of N numbers using recursion](./READMEs/factorial.md)
+- [Reverse an array using recursion](./READMEs/reverse-an-array.md)
+- [Check if a string is palindrome or not using recursion](./READMEs/palindrome.md)
+- [Fibonacci Number using recursion](./READMEs/fibonacci.md)
